@@ -1,9 +1,9 @@
  {{config(materialized='table')}}
  
-    with x as (
+    with y as (
         select id,name,sum(sales_amount)
         from g_sale
         group by id, name
     )
 
-    select * from x
+    select * from y
