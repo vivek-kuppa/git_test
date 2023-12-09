@@ -1,0 +1,17 @@
+# models/x_tests.yml
+
+version: 2
+
+models:
+  - name: x
+
+tests:
+  - name: unique_id_name_combination
+    description: "Ensure the combination of id and name is unique"
+    unique: ["id", "name"]
+    severity: ERROR
+
+  - name: no_nulls_in_result
+    description: "Ensure there are no null values in the aggregated results"
+    not_null: ["id", "name", "sum_sales"]
+    severity: ERROR
